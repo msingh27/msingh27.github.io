@@ -21,7 +21,9 @@
     img { display: block; max-width: 100%; height: auto; }
     .intro { display: grid; grid-template-columns: minmax(0, 1fr) 29%; align-items: center; gap: 34px; padding: 38px 0 30px; }
     .profile-photo { width: 100%; }
-    .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-top: 18px; }
+    .contact { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 10px; margin-top: 18px; }
+    .contact a { line-height: 1.2; }
+    .contact a + a { border-left: 1px solid #aaa; padding-left: 10px; }
     .authors { margin-bottom: 10px; font-size: 13px; line-height: 1.6; }
     .venue { font-weight: 700; }
     .publication-links { margin-bottom: 0; }
@@ -38,6 +40,8 @@
       main, footer { width: calc(100% - 32px); }
       .intro { grid-template-columns: 1fr; gap: 22px; padding-top: 28px; }
       .profile-photo { width: 190px; margin: 0 auto; }
+      .contact { column-gap: 6px; }
+      .contact a + a { padding-left: 6px; }
       .publication { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
       .publication > img, .publication-figure { max-width: 260px; margin: 0 auto; }
       h2 { margin-bottom: 20px; }
