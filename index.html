@@ -19,21 +19,19 @@
     h2 { margin: 0 0 24px; font-size: 23px; font-weight: 400; }
     h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.4; }
     img { display: block; max-width: 100%; height: auto; }
-    .intro { display: grid; grid-template-columns: minmax(0, 1fr) 245px; align-items: center; gap: 34px; padding: 38px 0 30px; }
+    .intro { display: grid; grid-template-columns: minmax(0, 1fr) 29%; align-items: center; gap: 34px; padding: 38px 0 30px; }
     .profile-photo { width: 100%; }
     .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-top: 18px; }
-    .featured { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #e5e5e5; }
-    .featured h3 { font-size: 18px; }
     .authors { margin-bottom: 10px; font-size: 13px; line-height: 1.6; }
     .venue { font-weight: 700; }
     .publication-links { margin-bottom: 0; }
-    .publication-links a { white-space: nowrap; }
-    .luce-figure { margin: 20px 0 16px; }
-    .figure-labels { display: grid; grid-template-columns: 21.7% 13.1% 65.2%; align-items: center; margin-bottom: 8px; color: #555; font-size: 12px; font-weight: 700; text-align: center; }
-    .luce-figure img { width: 100%; }
-    figcaption { margin-top: 9px; color: #666; font-size: 12px; }
-    .publication { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: center; gap: 28px; margin: 0 0 34px; }
-    .publication > img { width: 100%; }
+    .publication-links .resource-link { display: inline-block; white-space: nowrap; }
+    .publication { display: grid; grid-template-columns: 26.2% minmax(0, 1fr); align-items: center; gap: 28px; margin: 0 0 34px; scroll-margin-top: 24px; }
+    .publication > img, .publication-figure { width: 100%; }
+    .publication-figure { margin: 0; text-align: center; }
+    .publication-figure img { width: 100%; }
+    .publication-figure figcaption { margin-top: 8px; color: #666; font-size: 11px; line-height: 1.5; }
+    .publication-figure figcaption a { display: inline-block; margin-top: 3px; }
     .equal-contribution { font-size: 12px; color: #666; }
     footer { padding: 16px 0 30px; text-align: right; font-size: 12px; }
     @media (max-width: 640px) {
@@ -41,8 +39,7 @@
       .intro { grid-template-columns: 1fr; gap: 22px; padding-top: 28px; }
       .profile-photo { width: 190px; margin: 0 auto; }
       .publication { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
-      .publication > img { max-width: 300px; margin: 0 auto; }
-      .figure-labels { font-size: 10px; line-height: 1.3; }
+      .publication > img, .publication-figure { max-width: 260px; margin: 0 auto; }
       h2 { margin-bottom: 20px; }
     }
   </style>
@@ -62,95 +59,96 @@
           <a href="https://scholar.google.com/citations?user=RgeKqSAAAAAJ&amp;hl=en">Google Scholar</a>
         </nav>
       </div>
-      <img class="profile-photo" src="img/photo.jpg" alt="Mayank Singh">
+      <img class="profile-photo" src="img/photo.jpg" alt="Mayank Singh" width="2442" height="1676">
     </header>
 
     <section aria-labelledby="publications-heading">
       <h2 id="publications-heading">Selected Publications</h2>
-      <article class="featured" id="luce">
-        <h3><a href="https://arxiv.org/abs/2608.23943">Luce: Relightable Gaussians for 3D Asset Generation</a></h3>
-        <p class="authors"><strong>Mayank Singh</strong>, Michele Stoppa, Alvise Memo, Rui Yu, Sree Harsha Kalli, Srimanth Gunturi, Muhammad Ahmed Riaz, Behrooz Shahsavari, Waleed Abdulla, David E. Jacobs</p>
-        <p class="publication-links"><span class="venue">Preprint, 2026.</span>
-          [<a href="https://arxiv.org/abs/2608.23943">Paper</a>]
-          [<a href="https://machinelearning.apple.com/research/relightable-gaussians-3d-generation">Webpage / Blog</a>]
-        </p>
-        <figure class="luce-figure">
-          <div class="figure-labels" aria-hidden="true"><span>Condition image</span><span>PBR GS</span><span>Relit renders</span></div>
+      <article class="publication" id="luce">
+        <figure class="publication-figure">
           <a href="img/banner_luce.jpg" aria-label="View Luce results at full resolution">
             <img src="img/banner_luce.jpg" width="4710" height="2048" alt="Luce results for a robot and a backpack. From left to right: conditioning image, physically based Gaussian representation, and renders under three different lighting environments.">
           </a>
-          <figcaption>From a single image to PBR Gaussians and renders under different lighting. Select the image to view full-resolution results.</figcaption>
+          <figcaption>Input &middot; PBR GS &middot; Relit renders<br><a href="img/banner_luce.jpg">View full-size image</a></figcaption>
         </figure>
-        <p>Luce generates relightable 3D assets from a single image using a Gaussian representation of geometry and physically based materials. It preserves fine appearance details and produces PBR Gaussians, with optional textured mesh output.</p>
+        <div>
+          <h3><a href="https://arxiv.org/abs/2608.23943">Luce: Relightable Gaussians for 3D Asset Generation</a></h3>
+          <p class="authors"><strong>Mayank Singh</strong>, Michele Stoppa, Alvise Memo, Rui Yu, Sree Harsha Kalli, Srimanth Gunturi, Muhammad Ahmed Riaz, Behrooz Shahsavari, Waleed Abdulla, David E. Jacobs</p>
+          <p>Luce generates relightable 3D assets from a single image using a Gaussian representation of geometry and physically based materials. It preserves fine appearance details and produces PBR Gaussians, with optional textured mesh output.</p>
+          <p class="publication-links"><span class="venue">Preprint, 2026.</span>
+          <span class="resource-link">[<a href="https://arxiv.org/abs/2608.23943">Paper</a>]</span>
+          <span class="resource-link">[<a href="https://machinelearning.apple.com/research/relightable-gaussians-3d-generation">Webpage / Blog</a>]</span>
+        </p>
+        </div>
       </article>
 
       <article class="publication">
-        <img src="img/parts_arch.jpg" alt="Analogical Networks architecture for few-shot 3D part parsing" loading="lazy">
+        <img src="img/parts_arch.jpg" alt="Analogical Networks architecture for few-shot 3D part parsing" loading="lazy" width="1742" height="513">
         <div>
           <h3><a href="https://arxiv.org/abs/2304.14382">Analogy-Forming Transformers for Few-Shot 3D Parsing</a></h3>
           <p class="authors"><a href="https://nickgkan.github.io/">Nikolaos Gkanatsios</a><sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup>, <a href="https://zfang399.github.io/">Zhaoyuan Fang</a>, <a href="https://shubhtuls.github.io/">Shubham Tulsiani</a>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
           <p>We present <i>Analogical Networks</i>, a model that casts fine-grained 3D visual parsing as analogy-forming inference: instead of mapping input scenes to part labels, which is hard to adapt in a few-shot manner to novel inputs, our model retrieves related scenes from memory and their corresponding part structures, and predicts analogous part structures in the input object 3D point cloud, via an end-to-end learnable modulation mechanism.</p>
-          <p class="publication-links"><span class="venue">ICLR 2023.</span> [<a href="https://openreview.net/pdf?id=SRIQZTh0IK">Paper</a>] [<a href="https://analogicalnets.github.io/">Webpage</a>] [<a href="https://github.com/nickgkan/analogicalnets">Code</a>]</p>
+          <p class="publication-links"><span class="venue">ICLR 2023.</span> <span class="resource-link">[<a href="https://openreview.net/pdf?id=SRIQZTh0IK">Paper</a>]</span> <span class="resource-link">[<a href="https://analogicalnets.github.io/">Webpage</a>]</span> <span class="resource-link">[<a href="https://github.com/nickgkan/analogicalnets">Code</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/robust_attr.png" alt="Attribution maps from attributional robustness training" loading="lazy">
+        <img src="img/robust_attr.png" alt="Attribution maps from attributional robustness training" loading="lazy" width="1266" height="604">
         <div>
           <h3><a href="https://arxiv.org/abs/1911.13073">Attributional Robustness Training using Input-Gradient Spatial Alignment</a></h3>
           <p class="authors"><strong>Mayank Singh</strong><sup>*</sup>, <a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, Puneet Mangla, <a href="https://a7b23.github.io/">Abhishek Sinha</a>, <a href="https://www.iith.ac.in/~vineethnb/">Vineeth N Balasubramanian</a>, Balaji Krishnamurthy</p>
           <p>We propose a robust attribution training methodology <i>ART</i> that maximizes the alignment between the input and its attribution map. <i>ART</i> induces immunity to adversarial and common perturbations on standard vision datasets. It achieves state-of-the-art performance in weakly supervised object localization on CUB dataset.</p>
-          <p class="publication-links"><span class="venue">ECCV 2020.</span> [<a href="https://arxiv.org/abs/1911.13073">Paper</a>] [<a href="https://nupurkmr9.github.io/Attributional-Robustness/">Webpage</a>] [<a href="https://github.com/nupurkmr9/Attributional-Robustness">Code</a>]</p>
+          <p class="publication-links"><span class="venue">ECCV 2020.</span> <span class="resource-link">[<a href="https://arxiv.org/abs/1911.13073">Paper</a>]</span> <span class="resource-link">[<a href="https://nupurkmr9.github.io/Attributional-Robustness/">Webpage</a>]</span> <span class="resource-link">[<a href="https://github.com/nupurkmr9/Attributional-Robustness">Code</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/lat.png" alt="Latent-layer adversarial training method" loading="lazy">
+        <img src="img/lat.png" alt="Latent-layer adversarial training method" loading="lazy" width="2164" height="1156">
         <div>
           <h3><a href="https://arxiv.org/pdf/1905.05186.pdf">Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models</a></h3>
           <p class="authors"><a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup>, <a href="https://a7b23.github.io/">Abhishek Sinha</a><sup>*</sup>, Harshitha Machiraju, Balaji Krishnamurthy, <a href="https://www.iith.ac.in/~vineethnb/">Vineeth N Balasubramanian</a></p>
           <p>We analyze the adversarially trained models for vulnerability against adversarial perturbations in the latent layers. The algorithm achieved the state-of-the-art adversarial accuracy against strong adversarial attacks.</p>
-          <p class="publication-links"><span class="venue">IJCAI 2019.</span> [<a href="https://www.ijcai.org/Proceedings/2019/0385.pdf">Paper</a>] [<a href="https://github.com/msingh27/LAT_adversarial_robustness">Code</a>]</p>
+          <p class="publication-links"><span class="venue">IJCAI 2019.</span> <span class="resource-link">[<a href="https://www.ijcai.org/Proceedings/2019/0385.pdf">Paper</a>]</span> <span class="resource-link">[<a href="https://github.com/msingh27/LAT_adversarial_robustness">Code</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/block_dip.png" alt="Data Instance Prior approach for training generative adversarial networks" loading="lazy">
+        <img src="img/block_dip.png" alt="Data Instance Prior approach for training generative adversarial networks" loading="lazy" width="1929" height="945">
         <div>
           <h3><a href="https://arxiv.org/abs/2012.04256">Data InStance Prior (DISP) in Generative Adversarial Networks</a></h3>
           <p class="authors">Puneet Mangla<sup>*</sup>, <a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup>, <a href="https://www.iith.ac.in/~vineethnb/">Vineeth N Balasubramanian</a>, Balaji Krishnamurthy</p>
           <p>We propose a novel transfer learning technique for GANs in the limited data domain by leveraging informative data prior derived from self-supervised/supervised pretrained networks trained on a diverse source domain.</p>
-          <p class="publication-links"><span class="venue">WACV 2022.</span> [<a href="https://arxiv.org/abs/2012.04256">Paper</a>]</p>
+          <p class="publication-links"><span class="venue">WACV 2022.</span> <span class="resource-link">[<a href="https://arxiv.org/abs/2012.04256">Paper</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/ltgan.png" alt="Latent transformation detection for self-supervised GAN training" loading="lazy">
+        <img src="img/ltgan.png" alt="Latent transformation detection for self-supervised GAN training" loading="lazy" width="1987" height="754">
         <div>
           <h3><a href="https://arxiv.org/abs/2010.09893">LT-GAN: Self-Supervised GAN with Latent Transformation Detection</a></h3>
           <p class="authors">Parth Patel<sup>*</sup>, <a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup>, Balaji Krishnamurthy</p>
           <p>We propose a self-supervised approach (LT-GAN) to improve the generation quality and diversity of images by estimating the GAN-induced transformation (i.e. transformation induced in the generated images by perturbing the latent space of generator).</p>
-          <p class="publication-links"><span class="venue">WACV 2021.</span> [<a href="https://arxiv.org/abs/2010.09893">Paper</a>]</p>
+          <p class="publication-links"><span class="venue">WACV 2021.</span> <span class="resource-link">[<a href="https://arxiv.org/abs/2010.09893">Paper</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/few_shot.png" alt="Manifold mixup approach for few-shot learning" loading="lazy">
+        <img src="img/few_shot.png" alt="Manifold mixup approach for few-shot learning" loading="lazy" width="1010" height="604">
         <div>
           <h3><a href="https://arxiv.org/pdf/1907.12087.pdf">Charting the Right Manifold: Manifold Mixup for Few-shot Learning</a></h3>
           <p class="authors">Puneet Mangla<sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup>, <a href="https://a7b23.github.io/">Abhishek Sinha</a><sup>*</sup>, <a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, <a href="https://www.iith.ac.in/~vineethnb/">Vineeth N Balasubramanian</a>, Balaji Krishnamurthy</p>
           <p>We use self-supervision techniques like rotation prediction and exemplar, followed by manifold mixup for the few-shot classification tasks. The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.</p>
-          <p class="publication-links"><span class="venue">WACV 2020.</span> [<a href="https://openaccess.thecvf.com/content_WACV_2020/papers/Mangla_Charting_the_Right_Manifold_Manifold_Mixup_for_Few-shot_Learning_WACV_2020_paper.pdf">Paper</a>] [<a href="https://github.com/nupurkmr9/S2M2_fewshot">Code</a>]</p>
+          <p class="publication-links"><span class="venue">WACV 2020.</span> <span class="resource-link">[<a href="https://openaccess.thecvf.com/content_WACV_2020/papers/Mangla_Charting_the_Right_Manifold_Manifold_Mixup_for_Few-shot_Learning_WACV_2020_paper.pdf">Paper</a>]</span> <span class="resource-link">[<a href="https://github.com/nupurkmr9/S2M2_fewshot">Code</a>]</span></p>
         </div>
       </article>
 
       <article class="publication">
-        <img src="img/iclr_trust.png" alt="Results using models with perceptually aligned gradients" loading="lazy">
+        <img src="img/iclr_trust.png" alt="Results using models with perceptually aligned gradients" loading="lazy" width="1742" height="932">
         <div>
           <h3><a href="https://arxiv.org/abs/2005.01499">On the Benefits of Models with Perceptually-Aligned Gradients</a></h3>
           <p class="authors">Gunjan Aggarwal<sup>*</sup>, <a href="https://a7b23.github.io/">Abhishek Sinha</a><sup>*</sup>, <a href="https://nupurkmr9.github.io/">Nupur Kumari</a><sup>*</sup>, <strong>Mayank Singh</strong><sup>*</sup></p>
           <p>In this paper, we leverage models with interpretable perceptually-aligned features and show that adversarial training with low max-perturbation bound can improve the performance of models for zero-shot and weakly supervised localization tasks.</p>
-          <p class="publication-links"><span class="venue">ICLR Workshop: Towards Trustworthy ML, 2020.</span> [<a href="https://arxiv.org/abs/2005.01499">Paper</a>]</p>
+          <p class="publication-links"><span class="venue">ICLR Workshop: Towards Trustworthy ML, 2020.</span> <span class="resource-link">[<a href="https://arxiv.org/abs/2005.01499">Paper</a>]</span></p>
         </div>
       </article>
       <p class="equal-contribution"><sup>*</sup> denotes equal contribution</p>
